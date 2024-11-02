@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants/index";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ scrollToPricing }) => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -12,18 +13,25 @@ const Navbar = ({ scrollToPricing }) => {
 
   const phoneNumber = "7011615800";
   const emailAddress = "hs5686584@gmail.com";
+
+  const scrollTo100px = () => {
+    window.scrollTo({ top: 500, behavior: "smooth" });
+  };
+
   return (
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
       <div className="container px-4 mx-auto relative text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10" src={logo} alt="logo img" />
-            <span className="text-xl tracking-tight">Digital Seva</span>
+            <Link to={"/"} className="flex items-center flex-shrink-0">
+              <img className="h-10 w-10" src={logo} alt="logo img" />
+              <span className="text-xl tracking-tight">Digital Seva</span>
+            </Link>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
-              <li key={index}>
-                <a href={item.href}>{item.label}</a>
+              <li key={index} onClick={scrollTo100px}>
+                {item.label}
               </li>
             ))}
           </ul>

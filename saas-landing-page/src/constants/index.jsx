@@ -114,7 +114,7 @@ export const checklistItems = [
       "We specialize in handling incomplete projects, revitalizing and delivering solutions that meet your business goals.",
   },
   {
-    title: "Propery Deployment Guaranteed",
+    title: "Proper Deployment Guaranteed",
     description:
       "We ensure proper deployment of products, providing seamless integration and support for successful project launches.",
   },
@@ -149,7 +149,7 @@ export const pricingOptions = [
 ];
 
 export const resourcesLinks = [
-  { href: "#", text: "Mobile App Demos" },
+  { href: "/demo-wall", text: "Mobile App Demos" },
   { href: "#", text: "Who we are" },
   { href: "#", text: "Schedule Call" },
 ];

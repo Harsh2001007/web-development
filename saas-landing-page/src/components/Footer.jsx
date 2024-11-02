@@ -1,6 +1,7 @@
 import React from "react";
 import { resourcesLinks, platformLinks, communityLinks } from "../constants";
 import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const notifier = () =>
   toast("Coming soon!", {
@@ -25,12 +26,13 @@ function Footer() {
           <ul className="space-y-2">
             {resourcesLinks.map((link, index) => (
               <li key={index}>
-                <a
-                  onClick={notifier}
+                <Link
+                  to={link.href}
+                  onClick={link.href == "#" ? notifier : null}
                   className="text-neutral-300 hover:text-white"
                 >
                   {link.text}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -39,14 +41,7 @@ function Footer() {
           <h3 className="text-md font-semibold mb-4">Services</h3>
           <ul className="space-y-2">
             {platformLinks.map((link, index) => (
-              <li key={index}>
-                <a
-                  onClick={notifier}
-                  className="text-neutral-300 hover:text-white"
-                >
-                  {link.text}
-                </a>
-              </li>
+              <li key={index}>{link.text}</li>
             ))}
           </ul>
         </div>
